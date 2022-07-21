@@ -8,11 +8,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn -B -DskipTests clean package'
-            }
-        }
-        stage('Deliver') {
-            steps {
                 sh './mvnw package'
             }
         }
