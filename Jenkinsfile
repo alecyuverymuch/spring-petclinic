@@ -3,6 +3,9 @@ pipeline {
   stages {
     stage('SonarQube') {
       steps {
+        script {
+          scannerHome = tool 'SonarQube Scanner 2.14'
+        }
         withSonarQubeEnv() {
           sh './mvnw clean verify sonar:sonar'
         }
